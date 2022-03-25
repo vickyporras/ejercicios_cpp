@@ -10,6 +10,11 @@ public:
   Tablero(){
     this->filas=5;
     this->columna=5;
+    this->tablero = new int*[filas];
+
+    for (int i=0; i<filas; i++){
+      tablero[i] = new int[columnas];
+    }
   }
 };
 
