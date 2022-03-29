@@ -3,32 +3,58 @@ using namespace std;
 
 class Mueble{
   private:
-    string mesa;
-    string armario;
+    string material;
+    string dimensiones;
   public:
-    Mueble(string mesa="nombreMesa", string armario="nombreArmario"){
-      this->mesa=mesa;
-      this->armario=armario;
+    Mueble(string material="madera", string dimensiones="12x20x30"){
+      this->material=material;
+      this->dimensiones=dimensiones;
     }
     ~Mueble(){
         cout << "Adios!" << endl;
     }
     void imprimir(){
-        cout << "Mesa: " << this->mesa << ". Armario: " << this->armario << "." << endl;
+        cout << "Material: " << this->material << ". Dimensiones: " << this->dimensiones << "." << endl;
     }
+    void setMaterial(string material){
+        this->material = material;
+    }
+    void setDimensiones(string dimensiones){
+        this->dimensiones = dimensiones;
+    }
+    string getMaterial(){
+        return this->material;
+    }
+    string getDimensiones(){
+        return this->dimensiones;
+    }
+  };
 
-    void setMesa(string mesa){
-        this->mesa = mesa;
-    }
-    void setArmario(string armario){
-        this->armario = armario;
-    }
-    string getMesa(){
-        return this->mesa;
-    }
-    string getArmario(){
-        return this->armario;
-    }
+  class Mesa : public Mueble{
+    private:
+      int numPatas;
+      string forma;
+    public:
+      Mesa (string material="nombreMaterial", string dimensiones="dimensiones", int numPatas=4, string forma="redonda") : Mueble (material, dimensiones){
+        this->numPatas=numPatas;
+        this->forma=forma;
+      }
+      void setNumPatas(int numPatas){
+          this->numPatas = numPatas;
+      }
+      void setForma(string forma){
+          this->forma = forma;
+      }
+      int getNumPatas(){
+          return this->numPatas;
+      }
+      string getForma(){
+          return this->forma;
+      }
+      void imprimir_mesa(){
+        Mueble::imprimir();
+        cout << "Numero de patas: " << this->numPatas << "Forma: " << this->forma << endl;
+      }
   };
 
 
