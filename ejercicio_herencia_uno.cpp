@@ -55,6 +55,31 @@ class Mueble{
         Mueble::imprimir();
         cout << "Numero de patas: " << this->numPatas << "Forma: " << this->forma << endl;
       }
+      class Armario : protectec Mueble{
+        private:
+          string tipo;
+          int numBaldas;
+        public:
+          Mesa (string material="nombreMaterial", string dimensiones="dimensiones", string tipo="tipoArmario", int numBaldas=5) : Mueble (material, dimensiones){
+            this->tipo=tipo;
+            this->numBaldas=numBaldas;
+          }
+          void setTipo(string tipo){
+              this->tipo = tipo;
+          }
+          void setNumBaldas(int numBaldas){
+              this->numBaldas = numBaldas;
+          }
+          string getTipo(){
+              return this->tipo;
+          }
+          int getNumBaldas(){
+              return this->numBaldas;
+          }
+          void imprimir_armario(){
+            Mueble::imprimir();
+            cout << "Tipo de armario: " << this->tipo << "Numero de baldas: " << this->numBaldas << endl;
+          }
   };
 
 
