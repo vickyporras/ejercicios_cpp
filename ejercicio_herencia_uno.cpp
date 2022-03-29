@@ -55,12 +55,14 @@ class Mueble{
         Mueble::imprimir();
         cout << "Numero de patas: " << this->numPatas << "Forma: " << this->forma << endl;
       }
-      class Armario : protectec Mueble{
+    };
+
+    class Armario : protected Mueble{
         private:
           string tipo;
           int numBaldas;
         public:
-          Mesa (string material="nombreMaterial", string dimensiones="dimensiones", string tipo="tipoArmario", int numBaldas=5) : Mueble (material, dimensiones){
+          Armario (string material="nombreMaterial", string dimensiones="dimensiones", string tipo="tipoArmario", int numBaldas=5) : Mueble (material, dimensiones){
             this->tipo=tipo;
             this->numBaldas=numBaldas;
           }
