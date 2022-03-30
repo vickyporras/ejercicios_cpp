@@ -87,7 +87,8 @@ class Mueble{
 
 int main(){
 
-
+Juego juegoUno;
+juegoUno.imprimir();
 
 
   return 0;
